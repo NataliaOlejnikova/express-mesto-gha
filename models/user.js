@@ -29,8 +29,6 @@ const userSchema = new mongoose.Schema({
   },
   email: {
     type: String,
-    minlength: 4,
-    maxlength: 50,
     validate: {
       validator: (correct) => validator.isEmail(correct),
       message: 'Почта абонента введена неверно',
@@ -45,7 +43,7 @@ const userSchema = new mongoose.Schema({
   },
 });
 
-// eslint-disable-next-line func-names
+
 userSchema.statics.findUserByCredentials = function (email, password) {
   return this.findOne({ email })
     .select('+password')
