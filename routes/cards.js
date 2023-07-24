@@ -11,7 +11,7 @@ const {
 const {
   validateCreateCard,
   validateCardId,
-} = require('../utils/constant');
+} = require('../utils/data-validation');
 
 cardRouter.get('/', getCardList);
 cardRouter.post('/', validateCreateCard, createCard);

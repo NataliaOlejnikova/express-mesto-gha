@@ -18,24 +18,26 @@
     "yandex",
     "nodejs"
   ],
-  "author": "NataliaOlejnikova",
+  "author": "nataliaolejnikova",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/NataliaOlejnikova/express-mesto-gha/issues"
   },
   "homepage": "https://github.com/NataliaOlejnikova/express-mesto-gha#readme",
   "devDependencies": {
-    "eslint": "^8.42.0",
+    "eslint": "^8.34.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.27.5",
-    "nodemon": "^2.0.22"
+    "nodemon": "^2.0.20"
   },
   "dependencies": {
-    "body-parser": "^1.20.2",
+    "bcrypt": "^5.1.0",
     "celebrate": "^15.0.1",
-    "cookie-parser": "^1.4.6",
     "express": "^4.18.2",
-    "joi": "^17.9.2",
-    "mongoose": "^6.10.0"
+    "express-rate-limit": "^6.7.0",
+    "helmet": "^6.0.1",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^6.10.0",
+    "validator": "^13.9.0"
   }
 }

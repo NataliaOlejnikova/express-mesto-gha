@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-// eslint-disable-next-line import/no-unresolved
 const validator = require('validator');
 
 const cardSchema = new mongoose.Schema({

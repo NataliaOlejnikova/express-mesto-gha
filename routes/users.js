@@ -12,7 +12,7 @@ const {
   validateUserId,
   validateUserUpdate,
   validateUserAvatar,
-} = require('../utils/constant');
+} = require('../utils/data-validation');
 
 userRouter.get('/', getUserList);
 userRouter.get('/me', getUserProfile);

@@ -3,12 +3,12 @@ const mainRouter = require('express').Router();
 const {
   validateUserAuth,
   validateUserRegister,
-} = require('../utils/constant');
+} = require('../utils/data-validation');
 const { registerUser, authorizeUser } = require('../controllers/users');
 const authGuard = require('../middlewares/auth');
 const cardRouter = require('./cards');
 const userRouter = require('./users');
-const NotFound = require('../errors/NotFound');
+const NotFound = require('../utils/errors/NotFound');
 
 mainRouter.post('/signup', validateUserRegister, registerUser);
 mainRouter.post('/signin', validateUserAuth, authorizeUser);

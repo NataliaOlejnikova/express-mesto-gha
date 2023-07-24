@@ -11,9 +11,9 @@ const {
   DUPLICATE_OBJECT,
 } = require('../utils/response-status');
 
-const NotFound = require('../errors/NotFound');
-const BadRequests = require('../errors/BadRequest');
-const ConflictingRequest = require('../errors/ConflictingRequest');
+const NotFound = require('../utils/errors/NotFound');
+const BadRequests = require('../utils/errors/BadRequest');
+const ConflictingRequest = require('../utils/errors/ConflictingRequest');
 
 const getUserList = (req, res, next) => {
   User.find({})
@@ -122,7 +122,7 @@ const authorizeUser = (req, res, next) => {
   return User.findUserByCredentials(email, password)
     .then((selectedUser) => {
       const userToken = jwt.sign(
-        { _id: "d285e3dceed844f902650f40" },
+        { _id: selectedUser._id },
         'token-generate-key',
         { expiresIn: '7d' },
       );

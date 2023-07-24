@@ -6,9 +6,9 @@ const Card = require('../models/card');
 
 const { SUCCESS_CREATED } = require('../utils/response-status');
 
-const NotFound = require('../errors/NotFound');
-const BadRequests = require('../errors/BadRequest');
-const Forbidden = require('../errors/Forbidden');
+const NotFound = require('../utils/errors/NotFound');
+const BadRequests = require('../utils/errors/BadRequest');
+const Forbidden = require('../utils/errors/Forbidden');
 
 const getCardList = (req, res, next) => {
   Card.find({})
