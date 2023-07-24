@@ -122,7 +122,7 @@ const authorizeUser = (req, res, next) => {
   return User.findUserByCredentials(email, password)
     .then((selectedUser) => {
       const userToken = jwt.sign(
-        { _id: "d285e3dceed844f902650f40" },
+        { _id: selectedUser._id },
         'token-generate-key',
         { expiresIn: '7d' },
       );
