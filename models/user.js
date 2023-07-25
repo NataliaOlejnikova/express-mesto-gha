@@ -48,13 +48,13 @@ userSchema.statics.findUserByCredentials = function (email, password) {
     .then((selectedUser) => {
       if (!selectedUser) {
         return Promise.reject(
-          (Unauthorized),
+          new Unauthorized('Имя пользователя или (-и) пароль введены неверно'),
         );
       }
       return bcrypt.compare(password, selectedUser.password).then((correct) => {
         if (!correct) {
           return Promise.reject(
-            (Unauthorized),
+            new Unauthorized('Имя пользователя или (-и) пароль введены неверно'),
           );
         }
         return selectedUser;
